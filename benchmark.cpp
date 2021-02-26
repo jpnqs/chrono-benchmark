@@ -16,21 +16,35 @@ void benchmark::start()
 /// and calculate the ellapsed milliseconds
 /// </summary>
 /// <returns>ellapsed milliseconds</returns>
-ms_t benchmark::end()
+void benchmark::end()
 {
 	m_endTime = std::chrono::high_resolution_clock::now();
 
-	ms_t duration = (ms_t)std::chrono::duration_cast<std::chrono::microseconds>(m_endTime - m_startTime).count();
+	m_ellapsedTime = (µs_t)std::chrono::duration_cast<std::chrono::microseconds>(m_endTime - m_startTime).count();
+}
 
-	m_ellapsedTime = duration / c_msfactor;
-
+/// <summary>
+/// Get the ellapsed microseconds
+/// </summary>
+/// <returns>ellapsed microseconds</returns>
+µs_t bny::benchmark::get_µs()
+{
 	return m_ellapsedTime;
 }
 
 /// Get the ellapsed milliseconds
 /// </summary>
 /// <returns>ellapsed milliseconds</returns>
-ms_t benchmark::get_ellapsed_time()
+ms_t bny::benchmark::get_ms()
 {
-	return m_ellapsedTime;
+	return m_ellapsedTime / c_msfactor;
+}
+
+/// <summary>
+/// Get the ellapsed seconds
+/// </summary>
+/// <returns>ellapsed seconds</returns>
+sec_t bny::benchmark::get_sec()
+{
+	return m_ellapsedTime / c_secFactor;
 }
