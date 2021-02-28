@@ -1,8 +1,5 @@
 #include "benchmark.h"
 
-// use project namespace
-using namespace bny;
-
 /// <summary>
 /// Set the start point of the benchmark clock
 /// </summary>
