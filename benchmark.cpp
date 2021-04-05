@@ -24,7 +24,7 @@ void benchmark::end()
 /// Get the ellapsed microseconds
 /// </summary>
 /// <returns>ellapsed microseconds</returns>
-µs_t bny::benchmark::get_µs()
+µs_t benchmark::get_µs()
 {
 	return m_ellapsedTime;
 }
@@ -32,7 +32,7 @@ void benchmark::end()
 /// Get the ellapsed milliseconds
 /// </summary>
 /// <returns>ellapsed milliseconds</returns>
-ms_t bny::benchmark::get_ms()
+ms_t benchmark::get_ms()
 {
 	return m_ellapsedTime / c_msfactor;
 }
@@ -41,7 +41,7 @@ ms_t bny::benchmark::get_ms()
 /// Get the ellapsed seconds
 /// </summary>
 /// <returns>ellapsed seconds</returns>
-sec_t bny::benchmark::get_sec()
+sec_t benchmark::get_sec()
 {
 	return m_ellapsedTime / c_secFactor;
 }
